@@ -7,6 +7,9 @@ while True: #while適用於不知道使用者會執行幾次迴圈
     products.append([name, price])
 print(products)
 
+for p in products:
+    print(p[0], '的價格是', p[1])
+
 #p = [] 必須放在while loop 中, 否則會一直累加上去
 #p.append(name)
 #p.append(price)
