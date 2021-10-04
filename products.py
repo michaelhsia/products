@@ -32,9 +32,9 @@ def user_input(products):
     # p.append(price)
     # products.append(p)
 
-    # p = [name, price] 等於 31-33 行
+    # p = [name, price] 等於 30-32 行
 
-    # products = append([name, price]) 等於 31-34 行
+    # products = append([name, price]) 等於 30-33 行
 
 # 印出所有購買紀錄
 def print_products(products):
