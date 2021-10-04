@@ -1,13 +1,19 @@
+import os # operating system(作業系統)
+
 # 讀取檔案
 products = []
-with open('products.csv', 'r', encoding='utf-8') as f:
-    for line in f:
-        if '商品, 價格' in line:
-            continue # 直接進入下一個迴圈, 跟break(跳出迴圈)一樣只能在迴圈中出現
-        name, price = line.strip().split(',') # strip除去換行符號'\n', .split(',')來用逗點做分割
+if os.path.isfile('products.csv'): # 檢查檔案在不在
+    print('yeah!找到檔案了!')
+    with open('products.csv', 'r', encoding='utf-8') as f:
+        for line in f:
+            if '商品, 價格' in line:
+                continue # 直接進入下一個迴圈, 跟break(跳出迴圈)一樣只能在迴圈中出現
+            name, price = line.strip().split(',') # strip除去換行符號'\n', .split(',')來用逗點做分割
                                               # split切割完的結果會是'清單'
-        products.append([name, price])
-print(products)
+            products.append([name, price])
+    print(products)
+else:
+    print('找不到檔案...')
 
 # 讓使用者輸入
 while True: # while適用於不知道使用者會執行幾次迴圈
@@ -27,9 +33,9 @@ for p in products:
 # p.append(price)
 # products.append(p)
 
-# p = [name, price] 等於 21-24 行
+# p = [name, price] 等於 31-33 行
 
-# products = append([name, price]) 等於 21-25 行
+# products = append([name, price]) 等於 31-34 行
 
 # 寫入檔案
 with open ('products.csv', 'w', encoding='utf-8') as f: # 加入utf-8(最廣泛使用的編碼), 才能正常讀取/寫入) 
@@ -39,8 +45,3 @@ with open ('products.csv', 'w', encoding='utf-8') as f: # 加入utf-8(最廣泛�
         f.write(p[0] + ',' + p[1] + '\n') # 在f(剛剛 open 的檔案), write(自定義的內容)
                                           # 字串可用 '+', '*'來合併
                                           # 'a' + 'b' = 'ab', 'abc' * 3 = 'abcabcabc'
-
-
-
-
-
