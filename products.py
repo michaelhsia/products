@@ -53,6 +53,7 @@ def write_file(filename, products):
 
 def main(): # 主要程式進入點main function
     filename = 'products.csv'
+    products = []
     if os.path.isfile(filename): # 檢查檔案在不在, 不用寫成function
         print('yeah!找到檔案了!')
         products = read_file(filename)
